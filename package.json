@@ -1,0 +1,42 @@
+{
+  "name": "telegram-automation-framework",
+  "version": "1.0.0",
+  "description": "Production-ready, modular bot framework for message-processing pipelines on any chat platform",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./core": "./src/core/index.js",
+    "./adapters": "./src/adapters/index.js"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "test:watch": "nodemon --exec 'npm test'",
+    "lint": "eslint src/ tests/",
+    "build": "echo 'No build step needed for ES modules'",
+    "docs": "jsdoc -c jsdoc.json"
+  },
+  "keywords": [
+    "bot",
+    "framework",
+    "pipeline",
+    "telegram",
+    "discord",
+    "modular",
+    "messaging"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.67.0",
+    "pg": "^8.11.0",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
