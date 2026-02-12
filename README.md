@@ -57,8 +57,23 @@ Telegram ──► TelegramAdapter ──► BotEngine ──► Pipeline
 ## Installation
 
 ```bash
-# Clone or copy the framework into your project
-npm install
+# npm
+npm install telegram-automation-framework
+
+# yarn
+yarn add telegram-automation-framework
+
+# pnpm
+pnpm add telegram-automation-framework
+
+# bun
+bun add telegram-automation-framework
+```
+
+Then import in your project:
+
+```js
+import { BotEngine, Pipeline, TelegramAdapter } from 'telegram-automation-framework';
 ```
 
 The only runtime dependencies are `node-telegram-bot-api`, `pg`, and `winston`. Everything else is built-in.
@@ -75,7 +90,7 @@ import {
   BotEngine,
   Pipeline,
   TelegramAdapter,
-} from './src/index.js';
+} from 'telegram-automation-framework';
 
 // --- Define your pipeline stages ---
 
@@ -285,7 +300,7 @@ actionHandler.register('ban_and_notify', async ({ userId }, context) => {
 ### Add error recovery to a risky stage
 
 ```js
-import { ErrorHandler } from './src/index.js';
+import { ErrorHandler } from 'telegram-automation-framework';
 
 const errorHandler = new ErrorHandler(logger);
 
@@ -299,7 +314,7 @@ pipeline.setErrorHandler(errorHandler);
 ### Run two transports through one pipeline
 
 ```js
-import { TransportAdapter, TelegramAdapter, MTProtoAdapter } from './src/index.js';
+import { TransportAdapter, TelegramAdapter, MTProtoAdapter } from 'telegram-automation-framework';
 
 const botApi  = new TelegramAdapter(process.env.BOT_TOKEN);
 const mtproto = new MTProtoAdapter({ apiId, apiHash, sessionString });

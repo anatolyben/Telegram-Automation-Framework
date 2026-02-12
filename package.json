@@ -1,6 +1,6 @@
 {
   "name": "telegram-automation-framework",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Event-driven, middleware-based framework for Telegram group moderation and workflow automation",
   "type": "module",
   "main": "src/index.js",
